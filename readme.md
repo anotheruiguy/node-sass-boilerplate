@@ -40,6 +40,14 @@
 
 1. Install Grunt Watch
 	* `npm install grunt-contrib-watch --save-dev` - install Grunt watcher and save as a Dev resource
+	* Add the following to the Gruntfile within the `grunt.initConfig`
+	
+			watch: {
+		      source: {
+		        files: ['sass/**/*.scss'],
+		        tasks: ['sass']
+		      }
+		    }
 
 1. Install template language
 	* `npm install --save ejs` - to install ejs  -- or --
