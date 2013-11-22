@@ -1,0 +1,5 @@
+$color: red;
+
+@mixin foo($color: $color) {
+  background-color: $color;
+}

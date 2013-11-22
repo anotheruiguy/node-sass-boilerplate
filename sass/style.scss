@@ -1,3 +1,5 @@
-body {
-  foo: bar;
+@import "lib/mixins";
+
+block {
+  @include foo();
 }
