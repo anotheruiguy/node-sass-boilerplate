@@ -1,16 +1,19 @@
-$default_size: $heading_1 !default;
-$default_family: $heading_font_family !default;
-$default_color: orange !default;
-$default_weight: normal !default;
+$default_heading_size: $heading_1 !default;
+$default_heading_family: $heading_font_family !default;
+$default_heading_color: $primary_header_color !default;
+$default_heading_weight: normal !default;
 
 //////// heading text mixin //////////
 // ------------------------------------------------
 // default values are being set in /stipe/stylesheets/stipe/_typography.scss
-@mixin heading ($heading_size: $default_size, $heading_font_family: $default_family, $heading_color: $default_color, $heading_font_weight: $default_weight) {
+@mixin heading ($heading_size: $default_heading_size,
+$heading_family: $default_heading_family,
+$heading_color: $default_heading_color,
+$heading_weight: $default_heading_weight) {
   font-size: em($heading_size);
   line-height: baseline($heading_size);
   margin-bottom: baseline-margin($heading_size);
   color: $heading_color;
-  font-weight: $heading_font_weight;
-  font-family: $heading_font_family;
+  font-weight: $heading_weight;
+  font-family: $heading_family;
 }
