@@ -1,0 +1,11 @@
+// Baseline height calculations
+// line-height: baseline($baseline_size);
+@function baseline($baseline_size) {
+  @return ($line / $baseline_size) * ceil($baseline_size / $line) * 1em;
+}
+
+// Baseline margin calculations
+// margin-bottom: baseline-margin($baseline_size);
+@function baseline-margin($baseline_size) {
+  @return ($line / $baseline_size) * 1em;
+}
