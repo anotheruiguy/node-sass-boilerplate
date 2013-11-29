@@ -118,6 +118,13 @@ mark {
   background: #fffedf;
   color: #5a2e2e; }
 
+@font-face {
+  font-family: ico-fonts;
+  font-weight: normal;
+  font-style: normal;
+  src: url('fonts/ico-fonts.eot');
+  src: url('fonts/ico-fonts.eot?#iefix') format('embedded-opentype'), url('fonts/ico-fonts.woff') format('woff'), url('fonts/ico-fonts.ttf') format('truetype'), url('fonts/ico-fonts.svg#ico-fonts') format('svg'); }
+
 html {
   font: 0.75em "Helvetica Neue", Arial, sans-serif;
   line-height: 1.5em;
@@ -129,7 +136,7 @@ h1, h2, h3, h4, h5, h6 {
   margin-bottom: 0.3913em;
   color: orange;
   font-weight: normal;
-  font-family: "Helvetica Neue", Arial, sans-serif; }
+  font-family: web-font; }
 
 h2 {
   font-size: 2.66667em;
@@ -167,3 +174,24 @@ a {
     text-decoration: underline; }
   a:visited {
     color: #2a2c31; }
+
+.icon-expand:before, .icon-menu:before, .icon-twitter:before {
+  font-family: ico-font;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale; }
+
+.icon-expand:before {
+  content: '\e600';
+  margin-right: 0.25em; }
+
+.icon-menu:before {
+  content: '\e601';
+  margin-right: 0.25em; }
+
+.icon-twitter:before {
+  content: '\e602';
+  margin-right: 0.25em; }
