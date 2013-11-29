@@ -1,0 +1,16 @@
+/////// text arguments w/baseline rythem //////////
+// -----------------------------------------------------
+@mixin text ($baseline_size, $margin: auto) {
+  font-size: em($baseline_size);
+  line-height: baseline($baseline_size);
+
+  @if $margin == auto {
+    margin-bottom: baseline-margin($baseline_size);
+  }
+  @else if $margin == 0 {
+    // no op
+  }
+  @else {
+    margin-bottom: em($margin);
+  }
+}

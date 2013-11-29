@@ -1,3 +1,5 @@
+@import "typography/manifest";
+
 // Customize the following to fit your specifications
 // Commented out styles represent Toadstool's default bootstrap styles
 //* -----------------------------------------------------------------------
@@ -8,57 +10,46 @@ html {
 }
 
 // Heading CSS rules
-// -----------------------------------------------------------------------
-// Before editing CSS rules in this document, be sure that you have address the configurable variables
-// in the `_config.scss` file
+//* -----------------------------------------------------------------------
 
-// $heading_1, $heading_2, $heading_3, $heading_4, $heading_5, $heading_6
-// $heading_font_family, $primary_header_color and $heading_font_weight
-// Bottom margins and line-height are managed via the vertical rythem mixin in Stipe
-
-h1 {
-  // @extend %headings_1
+h1, h2, h3, h4, h5, h6 {
+  @include heading();
 }
 
 h2 {
-  // @extend %headings_2
+  @include text($heading_2);
 }
 
 h3 {
-  // @extend %headings_3
+  @include text($heading_3);
 }
 
 h4 {
-  // @extend %headings_4
+  @include text($heading_4);
 }
 
 h5 {
-  // @extend %headings_5
+  @include text($heading_5);
 }
 
 h6 {
-  // @extend %headings_6
+  @include text($heading_6);
 }
 
 // Standard body text support
 // -----------------------------------------------------------------------
 p {
-  // margin-bottom: baseline-margin($font_size)
-  // text-indent: 0
+  margin-bottom: baseline-margin($font_size);
+  text-indent: 0;
 }
 
-b {
-  // &:after
-  //  content: " "
-}
-
-// :link Pseudo-class is totally not necessary, but in come cases needed
 a {
-  // &:link
-  //  color: $href_color
-  //  text-decoration: none
-  // &:hover, &:active
-  //  text-decoration: underline
-  // &:visited
-  //  color: $href_color
+  color: $href_color;
+  text-decoration: none;
+  &:hover, &:active {
+    text-decoration: underline;
+  }
+  &:visited {
+    color: $href_color;
+  }
 }
