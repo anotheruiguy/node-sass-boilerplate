@@ -134,20 +134,40 @@ Within the `sass/` directory, we need to install a foundational directory framew
 	|- ui_patterns/
 	|- vendors/
 
-In our `application.scss` file, we need to import a few files to get this started. 
+In our `application.scss` file, we need to import a few files to get this started.
 
 	// App Config - this is where most of your magic will happen
 	// ---------------------------------------------------------
 	@import "config";  // Editing the config file sets the theme for the project
-	
-	
+
+
 	// Import core Sass libraries
 	// ---------------------------------------------------------
 	@import "lib/bourbon/bourbon";
-	
-	
+
+
 	// Standard CSS reset stuff here
 	// ---------------------------------------------------------
 	@import "reset";
-	
-The reset I have included in this project is a modified version of Eric Meyer's reset plus some ideas from the HTML5 reset project. Additionally I have updated this reset to be more Sass driven using variables. 
+
+The reset I have included in this project is a modified version of Eric Meyer's reset plus some ideas from the HTML5 reset project. Additionally I have updated this reset to be more Sass driven using variables.
+
+Next add the individual Sass files that will make up the base, module, vendor and layout portions of the project
+
+	// Base
+	@import "typography";
+	@import "forms";
+	@import "buttons";
+
+	// UI Patterns and Modules
+	// State is addressed within the component code itself
+	@import "ui_patterns/manifest";
+	@import "modules/manifest";
+
+	// Vendor specific styles / modules
+	@import "vendors/manifest";
+
+	// Layouts
+	@import "layouts/manifest";
+
+This will complete the initial set up of the bare bones project. From here you will be able to customize the Sass to fit the design of your project.
