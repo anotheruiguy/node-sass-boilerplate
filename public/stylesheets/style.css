@@ -97,23 +97,23 @@ a.button {
   -ms-interpolation-mode: bicubic; }
 
 a:link {
-  -webkit-tap-highlight-color: orange; }
+  -webkit-tap-highlight-color: #2a2c31; }
 
 ins {
-  background-color: orange;
+  background-color: #fffedf;
   color: black;
   text-decoration: none; }
 
 mark {
-  background-color: orange;
-  color: orange;
+  background-color: #fffedf;
+  color: #5a2e2e;
   font-style: italic;
   font-weight: bold; }
 
 ::selection {
-  background: orange;
-  color: orange; }
+  background: #fffedf;
+  color: #5a2e2e; }
 
 ::-moz-selection {
-  background: orange;
-  color: orange; }
+  background: #fffedf;
+  color: #5a2e2e; }
