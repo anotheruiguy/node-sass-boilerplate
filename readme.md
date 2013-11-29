@@ -20,7 +20,7 @@
 	* `touch public/index.html` - create static file in the public directory and add some simple 'Hello World' content
 	* `mkdir public/stylesheets` - create stylesheets directory within the public directory
 	* `mkdir sass` - create Sass directory in the root of the project
-	
+
 1. Create Gruntfile
 	* `touch gruntfile.js` - create a new Gruntfile in the root of your project, add the following code to the empty file
 
@@ -33,7 +33,7 @@
 			        }
 			      }
 			    }
-			
+
 			  grunt.loadNpmTasks('grunt-sass');
 			  grunt.registerTask('default', ['sass']);
 			};
@@ -41,7 +41,7 @@
 1. Install Grunt Watch
 	* `npm install grunt-contrib-watch --save-dev` - install Grunt watcher and save as a Dev resource
 	* Add the following to the Gruntfile within the `grunt.initConfig`
-	
+
 			watch: {
 		      source: {
 		        files: ['sass/**/*.scss'],
@@ -72,61 +72,82 @@
 			app.get('/', function(req, res) {
 			  res.render('index');
 			});
-			
-1. Our desired file structure	
+
+1. Our desired file structure
 
 		|- node_modules/
 		|- public/
 		|--- stylesheets/
 		|- sass/
 		|- views/
-		
+
 ## Get things running
 
-Now that you have a bare bones project set up, we need to get things running. Typically I will be running three terminal windows/tabs for this. 
+Now that you have a bare bones project set up, we need to get things running. Typically I will be running three terminal windows/tabs for this.
 
 1. user terminal for file navigation
 1. run Node server `$ node app.js`
 1. run grunt server `$ grunt watch`
 
-Now you should be able to navigate to `http://localhost:4000/` and see your project running. 
+Now you should be able to navigate to `http://localhost:4000/` and see your project running.
 
 ## Install a Sass framework
 
-For this project I choose to use Thoughtbot's [Bourbon](http://bourbon.io/) library. 
+For this project I choose to use Thoughtbot's [Bourbon](http://bourbon.io/) library.
 
-While this library is a Ruby Gem, this does not place a Ruby dependency on your project. The Gem installs a version of the Sass mixin library directly into your project. 
+While this library is a Ruby Gem, this does not place a Ruby dependency on your project. The Gem installs a version of the Sass mixin library directly into your project.
 
-Before installing the library, update your file structure to contain a `lib/` directory within your `sass/` directory. 
+Before installing the library, update your file structure to contain a `lib/` directory within your `sass/` directory.
 
-		|- node_modules/
-		|- public/
-		|--- stylesheets/
-		|- sass/
-		|--- lib/		
-		|- views/
+	|- node_modules/
+	|- public/
+	|--- stylesheets/
+	|- sass/
+	|--- lib/
+	|- views/
 
-### Let's install Bourbon. 
+### Let's install Bourbon.
 
 1. `$ gem install bourbon` or `sudo gem install bourbon` (if you are not running RVM)
 1. `$ cd sass/lib` change directories to the new Sass lib directory
 1. `bourbon install` to install the library
 1. Open the `style.scss` file and add `@import "lib/bourbon/bourbon";`
 
+### Install UI foundational framework
 
+Within the `sass/` directory, we need to install a foundational directory framework to start constructing our site. I recommend the following:
 
+	|- _buttons.scss
+	|- _config.scss
+	|- _forms.scss
+	|- _modules.scss
+	|- _reset.scss
+	|- _typography.scss
+	|- _vendors.scss
+	|- application.scss
+	|- buttons/
+	|- colors/
+	|- forms/
+	|- layouts/
+	|- lib/
+	|- modules/
+	|- ui_patterns/
+	|- vendors/
 
+In our `application.scss` file, we need to import a few files to get this started. 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
+	// App Config - this is where most of your magic will happen
+	// ---------------------------------------------------------
+	@import "config";  // Editing the config file sets the theme for the project
+	
+	
+	// Import core Sass libraries
+	// ---------------------------------------------------------
+	@import "lib/bourbon/bourbon";
+	
+	
+	// Standard CSS reset stuff here
+	// ---------------------------------------------------------
+	@import "reset";
+	
+The reset I have included in this project is a modified version of Eric Meyer's reset plus some ideas from the HTML5 reset project. Additionally I have updated this reset to be more Sass driven using variables. 
