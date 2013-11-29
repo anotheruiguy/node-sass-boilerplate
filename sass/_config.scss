@@ -11,20 +11,6 @@
 // $default-box-sizing: border-box;
 
 
-
-// Color defaults
-// *-------------------------------------------------------------------------------
-// HTML5 color settings
-// $webkit_tap_hightlight: orange;
-// $ins_color: orange;
-// $mark_color: orange;
-
-// // Typography
-// $primary_text: orange;
-// $selection_color: orange;
-// $selection_text_color: orange;
-
-
 /////// Typography configuration
 // *-------------------------------------------------------------------------------
 $font_size: 12;
@@ -47,15 +33,16 @@ $heading_font_family: #{"Helvetica Neue", Arial, sans-serif};
 
 // $icon_font_alpha: #{'ico-fonts'};
 
-/////// Default webfont directory///////
+
+/////// Default webfont directory
 // *-------------------------------------------------------------------------------
 // $webfont_directory: "/fonts/";
 
-/////// default image directory ///////
+/////// Default image directory
 // *-------------------------------------------------------------------------------
 // $imgDir: "/images/";
 
-/////// OOCSS generic base colors///////
+/////// OOCSS generic base colors
 // *-------------------------------------------------------------------------------
 $alpha_primary:   #5a2e2e;        // red
 $bravo_primary:   #3e4147;        // green
@@ -65,14 +52,14 @@ $echo_primary:    #dfba69;        // accent
 
 $alpha_gray:      #333;           //black
 
-/////// Color math ///////
+/////// Color math
 // *-------------------------------------------------------------------------------
 // @import "color/color_math";
 // @import "color/grayscale_math";
 // @import "color/color_defaults";
 
 
-/////// Semantic variables ///////
+/////// Semantic variables
 // *-------------------------------------------------------------------------------
 // abstract 'white' value to easily applied to semantic class objects
 $white:                                #fff;
@@ -97,7 +84,7 @@ $border_color:                         $alpha_primary;
 
 
 
-/////// HTML 5 feature colors ///////
+/////// HTML 5 feature colors
 // *-------------------------------------------------------------------------------
 // used with the `ins` tag
 // http://www.w3schools.com/tags/tag_ins.asp
@@ -115,7 +102,7 @@ $selection_color:                      $charlie_primary;
 $selection_text_color:                 $primary_text;
 
 
-/////// UI @media breakpoint defaults ///////
+/////// @media breakpoint defaults
 // *-------------------------------------------------------------------------------
 $tablet:                    "screen and (max-width: 64em)";
 $tablet_portrait:           "screen and (max-width: 50em) and (orientation: portrait)";

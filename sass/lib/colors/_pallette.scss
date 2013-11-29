@@ -1,0 +1,173 @@
+$alpha_color:$alpha_primary;
+$alpha_scale_bravo:scale-color($alpha_color,$lightness:10%);
+$alpha_scale_charlie:scale-color($alpha_color,$lightness:20%);
+$alpha_scale_delta:scale-color($alpha_color,$lightness:30%);
+$alpha_scale_echo:scale-color($alpha_color,$lightness:40%);
+$alpha_scale_fox:scale-color($alpha_color,$lightness:50%);
+$alpha_scale_golf:scale-color($alpha_color,$lightness:60%);
+$alpha_scale_hotel:scale-color($alpha_color,$lightness:70%);
+$alpha_scale_india:scale-color($alpha_color,$lightness:80%);
+$alpha_scale_juliet:scale-color($alpha_color,$lightness:90%);
+
+$alpha_tint_bravo:tint($alpha_color, 10%);
+$alpha_tint_charlie:tint($alpha_color, 20%);
+$alpha_tint_delta:tint($alpha_color, 30%);
+$alpha_tint_echo:tint($alpha_color, 40%);
+$alpha_tint_fox:tint($alpha_color, 50%);
+$alpha_tint_golf:tint($alpha_color, 60%);
+$alpha_tint_hotel:tint($alpha_color, 70%);
+$alpha_tint_india:tint($alpha_color, 80%);
+$alpha_tint_juliet:tint($alpha_color, 90%);
+
+$alpha_shade_bravo:shade($alpha_color, 10%);
+$alpha_shade_charlie:shade($alpha_color, 20%);
+$alpha_shade_delta:shade($alpha_color, 30%);
+$alpha_shade_echo:shade($alpha_color, 40%);
+$alpha_shade_fox:shade($alpha_color, 50%);
+$alpha_shade_golf:shade($alpha_color, 60%);
+$alpha_shade_hotel:shade($alpha_color, 70%);
+$alpha_shade_india:shade($alpha_color, 80%);
+$alpha_shade_juliet:shade($alpha_color, 90%);
+
+
+
+$bravo_color:$bravo_primary;
+$bravo_scale_bravo:scale-color($bravo_color,$lightness:10%);
+$bravo_scale_charlie:scale-color($bravo_color,$lightness:20%);
+$bravo_scale_delta:scale-color($bravo_color,$lightness:30%);
+$bravo_scale_echo:scale-color($bravo_color,$lightness:40%);
+$bravo_scale_fox:scale-color($bravo_color,$lightness:50%);
+$bravo_scale_golf:scale-color($bravo_color,$lightness:60%);
+$bravo_scale_hotel:scale-color($bravo_color,$lightness:70%);
+$bravo_scale_india:scale-color($bravo_color,$lightness:80%);
+$bravo_scale_juliet:scale-color($bravo_color,$lightness:90%);
+
+$bravo_tint_bravo:tint($bravo_color, 10%);
+$bravo_tint_charlie:tint($bravo_color, 20%);
+$bravo_tint_delta:tint($bravo_color, 30%);
+$bravo_tint_echo:tint($bravo_color, 40%);
+$bravo_tint_fox:tint($bravo_color, 50%);
+$bravo_tint_golf:tint($bravo_color, 60%);
+$bravo_tint_hotel:tint($bravo_color, 70%);
+$bravo_tint_india:tint($bravo_color, 80%);
+$bravo_tint_juliet:tint($bravo_color, 90%);
+
+$bravo_shade_bravo:shade($bravo_color, 10%);
+$bravo_shade_charlie:shade($bravo_color, 20%);
+$bravo_shade_delta:shade($bravo_color, 30%);
+$bravo_shade_echo:shade($bravo_color, 40%);
+$bravo_shade_fox:shade($bravo_color, 50%);
+$bravo_shade_golf:shade($bravo_color, 60%);
+$bravo_shade_hotel:shade($bravo_color, 70%);
+$bravo_shade_india:shade($bravo_color, 80%);
+$bravo_shade_juliet:shade($bravo_color, 90%);
+
+
+
+$charlie_color:$charlie_primary;
+$charlie_scale_bravo:scale-color($charlie_color,$lightness:10%);
+$charlie_scale_charlie:scale-color($charlie_color,$lightness:20%);
+$charlie_scale_delta:scale-color($charlie_color,$lightness:30%);
+$charlie_scale_echo:scale-color($charlie_color,$lightness:40%);
+$charlie_scale_fox:scale-color($charlie_color,$lightness:50%);
+$charlie_scale_golf:scale-color($charlie_color,$lightness:60%);
+$charlie_scale_hotel:scale-color($charlie_color,$lightness:70%);
+$charlie_scale_india:scale-color($charlie_color,$lightness:80%);
+$charlie_scale_juliet:scale-color($charlie_color,$lightness:90%);
+
+$charlie_tint_bravo:tint($charlie_color, 10%);
+$charlie_tint_charlie:tint($charlie_color, 20%);
+$charlie_tint_delta:tint($charlie_color, 30%);
+$charlie_tint_echo:tint($charlie_color, 40%);
+$charlie_tint_fox:tint($charlie_color, 50%);
+$charlie_tint_golf:tint($charlie_color, 60%);
+$charlie_tint_hotel:tint($charlie_color, 70%);
+$charlie_tint_india:tint($charlie_color, 80%);
+$charlie_tint_juliet:tint($charlie_color, 90%);
+
+$charlie_shade_bravo:shade($charlie_color, 10%);
+$charlie_shade_charlie:shade($charlie_color, 20%);
+$charlie_shade_delta:shade($charlie_color, 30%);
+$charlie_shade_echo:shade($charlie_color, 40%);
+$charlie_shade_fox:shade($charlie_color, 50%);
+$charlie_shade_golf:shade($charlie_color, 60%);
+$charlie_shade_hotel:shade($charlie_color, 70%);
+$charlie_shade_india:shade($charlie_color, 80%);
+$charlie_shade_juliet:shade($charlie_color, 90%);
+
+
+
+$delta_color:$delta_primary;
+$delta_scale_bravo:scale-color($delta_color,$lightness:10%);
+$delta_scale_charlie:scale-color($delta_color,$lightness:20%);
+$delta_scale_delta:scale-color($delta_color,$lightness:30%);
+$delta_scale_echo:scale-color($delta_color,$lightness:40%);
+$delta_scale_fox:scale-color($delta_color,$lightness:50%);
+$delta_scale_golf:scale-color($delta_color,$lightness:60%);
+$delta_scale_hotel:scale-color($delta_color,$lightness:70%);
+$delta_scale_india:scale-color($delta_color,$lightness:80%);
+$delta_scale_juliet:scale-color($delta_color,$lightness:90%);
+
+$delta_tint_bravo:tint($delta_color, 10%);
+$delta_tint_charlie:tint($delta_color, 20%);
+$delta_tint_delta:tint($delta_color, 30%);
+$delta_tint_echo:tint($delta_color, 40%);
+$delta_tint_fox:tint($delta_color, 50%);
+$delta_tint_golf:tint($delta_color, 60%);
+$delta_tint_hotel:tint($delta_color, 70%);
+$delta_tint_india:tint($delta_color, 80%);
+$delta_tint_juliet:tint($delta_color, 90%);
+
+$delta_shade_bravo:shade($delta_color, 10%);
+$delta_shade_charlie:shade($delta_color, 20%);
+$delta_shade_delta:shade($delta_color, 30%);
+$delta_shade_echo:shade($delta_color, 40%);
+$delta_shade_fox:shade($delta_color, 50%);
+$delta_shade_golf:shade($delta_color, 60%);
+$delta_shade_hotel:shade($delta_color, 70%);
+$delta_shade_india:shade($delta_color, 80%);
+$delta_shade_juliet:shade($delta_color, 90%);
+
+
+
+$echo_color:$echo_primary;
+$echo_scale_bravo:scale-color($echo_color,$lightness:10%);
+$echo_scale_charlie:scale-color($echo_color,$lightness:20%);
+$echo_scale_delta:scale-color($echo_color,$lightness:30%);
+$echo_scale_echo:scale-color($echo_color,$lightness:40%);
+$echo_scale_fox:scale-color($echo_color,$lightness:50%);
+$echo_scale_golf:scale-color($echo_color,$lightness:60%);
+$echo_scale_hotel:scale-color($echo_color,$lightness:70%);
+$echo_scale_india:scale-color($echo_color,$lightness:80%);
+$echo_scale_juliet:scale-color($echo_color,$lightness:90%);
+
+$echo_tint_bravo:tint($echo_color, 10%);
+$echo_tint_charlie:tint($echo_color, 20%);
+$echo_tint_delta:tint($echo_color, 30%);
+$echo_tint_echo:tint($echo_color, 40%);
+$echo_tint_fox:tint($echo_color, 50%);
+$echo_tint_golf:tint($echo_color, 60%);
+$echo_tint_hotel:tint($echo_color, 70%);
+$echo_tint_india:tint($echo_color, 80%);
+$echo_tint_juliet:tint($echo_color, 90%);
+
+$echo_shade_bravo:shade($echo_color, 10%);
+$echo_shade_charlie:shade($echo_color, 20%);
+$echo_shade_delta:shade($echo_color, 30%);
+$echo_shade_echo:shade($echo_color, 40%);
+$echo_shade_fox:shade($echo_color, 50%);
+$echo_shade_golf:shade($echo_color, 60%);
+$echo_shade_hotel:shade($echo_color, 70%);
+$echo_shade_india:shade($echo_color, 80%);
+$echo_shade_juliet:shade($echo_color, 90%);
+
+
+
+$bravo_gray:scale-color($alpha_gray, $lightness: 10%);
+$charlie_gray:scale-color($alpha_gray, $lightness: 20%);
+$delta_gray:scale-color($alpha_gray, $lightness: 30%);
+$echo_gray:scale-color($alpha_gray, $lightness: 40%);
+$fox_gray:scale-color($alpha_gray, $lightness: 50%);
+$golf_gray:scale-color($alpha_gray, $lightness: 60%);
+$hotel_gray:scale-color($alpha_gray, $lightness: 70%);
+$india_gray:scale-color($alpha_gray, $lightness: 80%);
