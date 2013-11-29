@@ -1,6 +1,6 @@
 # Steps used to create this project
 
-### Run the following steps inside a clean directory
+## Run the following steps inside a clean directory
 
 1. Create your Node.js project
 	* `npm init` - create a clean node project
@@ -80,3 +80,53 @@
 		|--- stylesheets/
 		|- sass/
 		|- views/
+		
+## Get things running
+
+Now that you have a bare bones project set up, we need to get things running. Typically I will be running three terminal windows/tabs for this. 
+
+1. user terminal for file navigation
+1. run Node server `$ node app.js`
+1. run grunt server `$ grunt watch`
+
+Now you should be able to navigate to `http://localhost:4000/` and see your project running. 
+
+## Install a Sass framework
+
+For this project I choose to use Thoughtbot's [Bourbon](http://bourbon.io/) library. 
+
+While this library is a Ruby Gem, this does not place a Ruby dependency on your project. The Gem installs a version of the Sass mixin library directly into your project. 
+
+Before installing the library, update your file structure to contain a `lib/` directory within your `sass/` directory. 
+
+		|- node_modules/
+		|- public/
+		|--- stylesheets/
+		|- sass/
+		|--- lib/		
+		|- views/
+
+### Let's install Bourbon. 
+
+1. `$ gem install bourbon` or `sudo gem install bourbon` (if you are not running RVM)
+1. `$ cd sass/lib` change directories to the new Sass lib directory
+1. `bourbon install` to install the library
+1. Open the `style.scss` file and add `@import "lib/bourbon/bourbon";`
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
