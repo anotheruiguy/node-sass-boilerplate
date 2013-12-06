@@ -45,7 +45,10 @@
 			watch: {
 		      source: {
 		        files: ['sass/**/*.scss'],
-		        tasks: ['sass']
+		        tasks: ['sass'],
+		        options: {
+		          livereload: true,
+		        }
 		      }
 		    }
 
@@ -72,6 +75,10 @@
 			app.get('/', function(req, res) {
 			  res.render('index');
 			});
+
+	* Just before the `</body>` in your template file, be sure to add in the script for LiveReload
+
+			<script src="//localhost:35729/livereload.js"></script>
 
 1. Our desired file structure
 
