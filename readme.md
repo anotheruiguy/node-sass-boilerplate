@@ -47,7 +47,7 @@
 		        files: ['sass/**/*.scss'],
 		        tasks: ['sass'],
 		        options: {
-		          livereload: true,
+		          livereload: true,  // needed to run LiveReload
 		        }
 		      }
 		    }
