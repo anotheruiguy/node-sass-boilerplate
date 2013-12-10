@@ -2,27 +2,85 @@
 
 ## Run the following steps inside a clean directory
 
-1. Create your Node.js project
-	* `npm init` - create a clean node project
-	* **NOTE**: be sure to add `"private": true,` to the `package.json` so that your project is not globally distributed as a npm app
+Not sure if you are in the same boat as I, but I could not find any good resource out there that pulled this all together. So here is a step-by-step tutorial for creating a Node.js app from scratch, adding in Grunt and then Node-Sass. Yeah, try and find good docs on Node-Sass alone :(
 
-1. Install Express
-	* `npm install --save express` - install the Express package and save to your `package.json` file
+Hope this is of help!
 
-1. Install Grunt
-	* `npm install --save-dev grunt` - install the Grunt package and save to your `package.json` file
+#### Create your Node.js project
+* `npm init` - create a clean node project
+* **NOTE**: be sure to add `"private": true,` to the `package.json` so that your project is not globally distributed as a npm app
 
-1. Install Grunt-Sass
-	* `npm install --save-dev grunt-sass` - install grunt-sass
+#### Install Express
+* `npm install --save express` - install the Express package and save to your `package.json` file
 
-1. Set up skeleton project framework
-	* `mkdir public` - at the root of the project, crate a new 'public' directory
-	* `touch public/index.html` - create static file in the public directory and add some simple 'Hello World' content
-	* `mkdir public/stylesheets` - create stylesheets directory within the public directory
-	* `mkdir sass` - create Sass directory in the root of the project
 
-1. Create Gruntfile
-	* `touch gruntfile.js` - create a new Gruntfile in the root of your project, add the following code to the empty file
+#### Install Grunt
+* `npm install --save-dev grunt` - install the Grunt package and save to your `package.json` file
+
+
+#### Set up skeleton project framework
+* `mkdir public` - at the root of the project, crate a new 'public' directory
+* `mkdir public/stylesheets` - create stylesheets directory within the public directory
+
+
+#### Get the app started
+* `touch app.js` - create the core application `.js` file
+* add the following
+
+		// set variables for environment
+		var express = require('express');
+		var app = express();
+		var path = require('path');
+
+		// Set server port
+		app.listen(4000);
+		console.log('server is running');
+
+
+#### Install template language
+* `npm install --save ejs` - to install ejs  -- or --
+* `npm install --save jade` - to install jade
+* `mkdir views` - create views directory for template views
+* `touch views/something.ejs` - create any view file   -- or --
+* `touch views/something.jade` - create any view file
+
+
+#### Update the app.js file
+* add the following above setting the server port
+
+		// views as directory for all template files
+		app.set('views', path.join(__dirname, 'views'));
+		app.set('view engine', 'jade'); // use either jade or ejs		// instruct express to server up static assets
+		app.use(express.static('public'));
+
+
+#### Adding routes, make a home page
+* **NOTE**: ALL routes need to come **BEFORE** `app.listen(4000);`
+* update `app.js` to reflect template being used per the route
+* `mkdir views` where all view templates will live
+* `touch views/index.jade` - create base index file
+* Open `app.js` and crate root route that points to that template file
+
+			// set routes
+			app.get('/', function(req, res) {
+			  res.render('index');
+			});
+
+* Just before the `</body>` in your template file, be sure to add in the script for LiveReload
+
+			<script src="//localhost:35729/livereload.js"></scrip>
+
+
+#### Install Grunt-Sass
+* `npm install --save-dev grunt-sass` - install grunt-sass
+
+
+#### Add Sass to the project
+* `mkdir sass` - create Sass directory in the root of the project
+
+
+#### Create Gruntfile
+* `touch gruntfile.js` - create a new Gruntfile in the root of your project, add the following code to the empty file
 
 			module.exports = function(grunt) {
 			  grunt.initConfig ({
@@ -38,49 +96,24 @@
 			  grunt.registerTask('default', ['sass']);
 			};
 
-1. Install Grunt Watch
-	* `npm install grunt-contrib-watch --save-dev` - install Grunt watcher and save as a Dev resource
-	* Add the following to the Gruntfile within the `grunt.initConfig`
+
+#### Install Grunt Watch
+* `npm install grunt-contrib-watch --save-dev` - install Grunt watcher and save as a Dev resource
+* Add the following to the Gruntfile within the `grunt.initConfig`
+* Add the `livereload: true` option so that LiveReload will work on your project
 
 			watch: {
 		      source: {
 		        files: ['sass/**/*.scss'],
 		        tasks: ['sass'],
 		        options: {
-		          livereload: true,  // needed to run LiveReload
+		          livereload: true, // needed to run LiveReload
 		        }
 		      }
 		    }
 
-1. Install template language
-	* `npm install --save ejs` - to install ejs  -- or --
-	* `npm install --save jade` - to install jade
-	* `mkdir views` - create views directory for template views
-	* `touch views/something.ejs` - create any view file   -- or --
-	* `touch views/something.jade` - create any view file
 
-1. Adding routes
-	* **NOTE**: ALL routes need to come **BEFORE** `app.listen(4000);`
-	* Remove all static `.html` files from the `public` directory
-	* update `app.js` to reflect template being used per the route
-
-			app.get('/foo', function(req, res) {
-			  res.render('something');
-			});
-
-1. Create the 'home' page
-	* `touch views/index.ejs` - create base index file
-	* Open `app.js` and crate root route that points to that template file
-
-			app.get('/', function(req, res) {
-			  res.render('index');
-			});
-
-	* Just before the `</body>` in your template file, be sure to add in the script for LiveReload
-
-			<script src="//localhost:35729/livereload.js"></script>
-
-1. Our desired file structure
+#### Our desired file structure
 
 		|- node_modules/
 		|- public/
@@ -88,15 +121,17 @@
 		|- sass/
 		|- views/
 
+
 ## Get things running
 
 Now that you have a bare bones project set up, we need to get things running. Typically I will be running three terminal windows/tabs for this.
 
-1. user terminal for file navigation
-1. run Node server `$ node app.js`
-1. run grunt server `$ grunt watch`
+* user terminal for file navigation
+* run Node server `$ node app.js`
+* run grunt server `$ grunt watch`
 
 Now you should be able to navigate to `http://localhost:4000/` and see your project running.
+
 
 ## Install a Sass framework
 
@@ -113,12 +148,14 @@ Before installing the library, update your file structure to contain a `lib/` di
 	|--- lib/
 	|- views/
 
+
 ### Let's install Bourbon.
 
-1. `$ gem install bourbon` or `sudo gem install bourbon` (if you are not running RVM)
-1. `$ cd sass/lib` change directories to the new Sass lib directory
-1. `bourbon install` to install the library
-1. Open the `style.scss` file and add `@import "lib/bourbon/bourbon";`
+* `$ gem install bourbon` or `sudo gem install bourbon` (if you are not running RVM)
+* `$ cd sass/lib` change directories to the new Sass lib directory
+* `bourbon install` to install the library
+* Open the `style.scss` file and add `@import "lib/bourbon/bourbon";`
+
 
 ### Install UI foundational framework
 
