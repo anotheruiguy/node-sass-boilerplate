@@ -215,3 +215,14 @@ Next add the individual Sass files that will make up the base, module, vendor an
 	@import "layouts/manifest";
 
 This will complete the initial set up of the bare bones project. From here you will be able to customize the Sass to fit the design of your project.
+
+## Deploy to Heroku
+
+The Heroku Dev Center has a great article on ["Getting Started with Node.js on Heroku"](https://devcenter.heroku.com/articles/getting-started-with-nodejs).
+
+The tl;dr version (assuming you already have the Heroku Toolbelt):
+
+1. Add a `Procfile` to declare the process type. Our `Procfile` should contain a single line: `web: node app.js`
+2. Create a new Heroku app and add it as a Git remote: `heroku create`
+3. Deploy: `git push heroku master`
+4. Visit your new app: `heroku open`
