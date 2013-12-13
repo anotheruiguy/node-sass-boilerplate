@@ -55,7 +55,7 @@ Hope this is of help!
 
 
 #### Adding routes, make a home page
-* **NOTE**: ALL routes need to come **BEFORE** `app.listen(4000);`
+* **NOTE**: ALL routes need to come **BEFORE** `app.listen(port);`
 * update `app.js` to reflect template being used per the route
 * `mkdir views` where all view templates will live
 * `touch views/index.jade` - create base index file
@@ -130,7 +130,7 @@ Now that you have a bare bones project set up, we need to get things running. Ty
 * run Node server `$ node app.js`
 * run grunt server `$ grunt watch`
 
-Now you should be able to navigate to `http://localhost:4000/` and see your project running.
+Now you should be able to navigate to `http://localhost:3000/` and see your project running. Run `PORT=4000 node app.js` to listen on a different port.
 
 
 ## Install a Sass framework
