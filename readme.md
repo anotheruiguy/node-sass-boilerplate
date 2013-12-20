@@ -55,7 +55,7 @@ Hope this is of help!
 
 
 #### Adding routes, make a home page
-* **NOTE**: ALL routes need to come **BEFORE** `app.listen(4000);`
+* **NOTE**: ALL routes need to come **BEFORE** `app.listen(port);`
 * update `app.js` to reflect template being used per the route
 * `mkdir views` where all view templates will live
 * `touch views/index.jade` - create base index file
@@ -130,7 +130,7 @@ Now that you have a bare bones project set up, we need to get things running. Ty
 * run Node server `$ node app.js`
 * run grunt server `$ grunt watch`
 
-Now you should be able to navigate to `http://localhost:4000/` and see your project running.
+Now you should be able to navigate to `http://localhost:3000/` and see your project running. Run `PORT=4000 node app.js` to listen on a different port.
 
 
 ## Install a Sass framework
@@ -215,3 +215,40 @@ Next add the individual Sass files that will make up the base, module, vendor an
 	@import "layouts/manifest";
 
 This will complete the initial set up of the bare bones project. From here you will be able to customize the Sass to fit the design of your project.
+
+## Deploy to Heroku
+
+The Heroku Dev Center has a great article on ["Getting Started with Node.js on Heroku"](https://devcenter.heroku.com/articles/getting-started-with-nodejs).
+
+The tl;dr version (assuming you already have the Heroku Toolbelt):
+
+1. Add a `Procfile` to declare the process type. Our `Procfile` should contain a single line: `web: node app.js`
+2. Create a new Heroku app and add it as a Git remote: `heroku create`
+3. Deploy: `git push heroku master`
+4. Visit your new app: `heroku open`
+
+### Compiling your Sass on deploy
+
+Checking compiled CSS into version control isn't the most evil thing a developer could do, but it's close. So how do you compile your Sass into CSS *and* deploy it?
+
+1. Include `grunt-cli` in your `package.json`: `npm install --save-dev grunt-cli`
+2. Add a [`postinstall`](https://npmjs.org/doc/scripts.html) "scripts" step to `package.json`. It should look something like this:
+
+        "scripts": {
+          "test": "echo \"Error: no test specified\" && exit 1",
+          "postinstall": "./node_modules/.bin/grunt"
+        },
+
+3. Previously, we installed Grunt and Grunt-Sass in the `devDependencies` group in `package.json`, which won't work because Heroku runs `npm install --production` during deployment. The `--production` flag skips the `devDependencies` group. So we need to move grunt and Grunt-Sass to the `dependencies` group instead:
+
+        "dependencies": {
+          "grunt": "~0.4.1",
+          "grunt-sass": "~0.8.0",
+          ...
+        },
+        "devDependencies": {
+          "grunt-contrib-watch": "~0.5.3",
+          "grunt-cli": "~0.1.11"
+        }
+
+4. Now, when you `git push heroku` Heroku will compile your Sass and your app will look pretty. Just like you.
