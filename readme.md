@@ -7,24 +7,24 @@ Not sure if you are in the same boat as I, but I could not find any good resourc
 Hope this is of help!
 
 #### Create your Node.js project
-* `npm init` - create a clean node project
+* `$ npm init` - create a clean node project
 * **NOTE**: be sure to add `"private": true,` to the `package.json` so that your project is not globally distributed as a npm app
 
 #### Install Express
-* `npm install --save express` - install the Express package and save to your `package.json` file
+* `$ npm install --save express` - install the Express package and save to your `package.json` file
 
 
 #### Install Grunt
-* `npm install --save-dev grunt` - install the Grunt package and save to your `package.json` file
+* `$ npm install --save-dev grunt` - install the Grunt package and save to your `package.json` file
 
 
 #### Set up skeleton project framework
-* `mkdir public` - at the root of the project, crate a new 'public' directory
-* `mkdir public/stylesheets` - create stylesheets directory within the public directory
+* `$ mkdir public` - at the root of the project, crate a new 'public' directory
+* `$ mkdir public/stylesheets` - create stylesheets directory within the public directory
 
 
 #### Get the app started
-* `touch app.js` - create the core application `.js` file
+* `$ touch app.js` - create the core application `.js` file
 * add the following
 
 		// set variables for environment
@@ -38,37 +38,40 @@ Hope this is of help!
 
 
 #### Install template language
-* `npm install --save ejs` - to install ejs  -- or --
-* `npm install --save jade` - to install jade
-* `mkdir views` - create views directory for template views
-* `touch views/something.ejs` - create any view file   -- or --
-* `touch views/something.jade` - create any view file
+* `$ npm install --save ejs` - to install ejs  -- or --
+* `$ npm install --save jade` - to install jade
+* `$ mkdir views` - create views directory for template views
+* `$ touch views/something.ejs` - create any view file   -- or --
+* `$ touch views/something.jade` - create any view file
 
 
 #### Update the app.js file
-* add the following above setting the server port
 
-		// views as directory for all template files
-		app.set('views', path.join(__dirname, 'views'));
-		app.set('view engine', 'jade'); // use either jade or ejs		// instruct express to server up static assets
-		app.use(express.static('public'));
+Add the following above setting the server port
+
+	// views as directory for all template files
+	app.set('views', path.join(__dirname, 'views'));
+	app.set('view engine', 'jade'); // use either jade or ejs		// instruct express to server up static assets
+	app.use(express.static('public'));
 
 
 #### Adding routes, make a home page
 * **NOTE**: ALL routes need to come **BEFORE** `app.listen(port);`
 * update `app.js` to reflect template being used per the route
-* `mkdir views` where all view templates will live
-* `touch views/index.jade` - create base index file
-* Open `app.js` and crate root route that points to that template file
+* `$ cd views` where all view templates will live
+* `$ touch views/index.jade` - create base index file
 
-			// set routes
-			app.get('/', function(req, res) {
-			  res.render('index');
-			});
+Open `app.js` and crate root route that points to that template file
 
-* Just before the `</body>` in your template file, be sure to add in the script for LiveReload
+	// set routes
+	app.get('/', function(req, res) {
+	  res.render('index');
+	});
 
-			<script src="//localhost:35729/livereload.js"></scrip>
+
+Just before the `</body>` in your template file, be sure to add in the script for LiveReload
+
+	<script src="//localhost:35729/livereload.js"></scrip>
 
 
 #### Install Grunt-Sass
@@ -80,46 +83,47 @@ Hope this is of help!
 
 
 #### Create Gruntfile
-* `touch gruntfile.js` - create a new Gruntfile in the root of your project, add the following code to the empty file
+`$ touch gruntfile.js` - create a new Gruntfile in the root of your project, add the following code to the empty file
 
-			module.exports = function(grunt) {
-			  grunt.initConfig ({
-			    sass: {
-			      dist: {
-			        files: {
-			          'public/stylesheets/style.css' : 'sass/style.scss'
-			        }
-			      }
-			    }
+	module.exports = function(grunt) {
+	  grunt.initConfig ({
+	    sass: {
+	      dist: {
+	        files: {
+	          'public/stylesheets/style.css' : 'sass/style.scss'
+	        }
+	      }
+	    }
 
-			  grunt.loadNpmTasks('grunt-sass');
-			  grunt.registerTask('default', ['sass']);
-			};
+	  grunt.loadNpmTasks('grunt-sass');
+	  grunt.registerTask('default', ['sass']);
+	};
 
 
 #### Install Grunt Watch
 * `npm install grunt-contrib-watch --save-dev` - install Grunt watcher and save as a Dev resource
 * Add the following to the Gruntfile within the `grunt.initConfig`
-* Add the `livereload: true` option so that LiveReload will work on your project
 
-			watch: {
-		      source: {
-		        files: ['sass/**/*.scss'],
-		        tasks: ['sass'],
-		        options: {
-		          livereload: true, // needed to run LiveReload
-		        }
-		      }
-		    }
+Add the `livereload: true` option so that LiveReload will work on your project
+
+	watch: {
+      source: {
+        files: ['sass/**/*.scss'],
+        tasks: ['sass'],
+        options: {
+          livereload: true, // needed to run LiveReload
+        }
+      }
+    }
 
 
 #### Our desired file structure
 
-		|- node_modules/
-		|- public/
-		|--- stylesheets/
-		|- sass/
-		|- views/
+	|- node_modules/
+	|- public/
+	|--- stylesheets/
+	|- sass/
+	|- views/
 
 
 ## Get things running
@@ -153,7 +157,7 @@ Before installing the library, update your file structure to contain a `lib/` di
 
 * `$ gem install bourbon` or `sudo gem install bourbon` (if you are not running RVM)
 * `$ cd sass/lib` change directories to the new Sass lib directory
-* `bourbon install` to install the library
+* `$ bourbon install` to install the library
 * Open the `style.scss` file and add `@import "lib/bourbon/bourbon";`
 
 
@@ -251,4 +255,4 @@ Checking compiled CSS into version control isn't the most evil thing a developer
           "grunt-cli": "~0.1.11"
         }
 
-4. Now, when you `git push heroku` Heroku will compile your Sass and your app will look pretty. Just like you.
+4. Now, when you `git push heroku` Heroku will compile your Sass.
