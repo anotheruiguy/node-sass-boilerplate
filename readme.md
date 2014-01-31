@@ -17,6 +17,16 @@ Hope this is of help!
 #### Install Grunt
 * `$ npm install --save-dev grunt` - install the Grunt package and save to your `package.json` file
 
+##### Grunt dependencies
+
+Depending on your setup, you may or may not have the `coffee-script` package installed. Run to install globally:
+
+	$ npm install -g coffee-script
+	
+If you only want to add to this project: 
+
+	$ npm install --save-dev coffee-script
+
 
 #### Set up skeleton project framework
 * `$ mkdir public` - at the root of the project, crate a new 'public' directory
