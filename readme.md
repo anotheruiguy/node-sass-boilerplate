@@ -22,8 +22,8 @@ Hope this is of help!
 Depending on your setup, you may or may not have the `coffee-script` package installed. Run to install globally:
 
 	$ npm install -g coffee-script
-	
-If you only want to add to this project: 
+
+If you only want to add to this project:
 
 	$ npm install --save-dev coffee-script
 
@@ -112,7 +112,7 @@ Just before the `</body>` in your template file, be sure to add in the script fo
 
 #### Install Grunt Watch
 * `npm install grunt-contrib-watch --save-dev` - install Grunt watcher and save as a Dev resource
-* Add the following to the Gruntfile within the `grunt.initConfig`
+* Add the following to `gruntfile.js` within the `grunt.initConfig` function
 
 Add the `livereload: true` option so that LiveReload will work on your project
 
