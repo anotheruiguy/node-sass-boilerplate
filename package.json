@@ -1,23 +1,23 @@
 {
-  "name": "Node-Sass",
+  "name": "node-project",
   "version": "0.0.0",
-  "private": true,
   "description": "",
   "main": "index.js",
+  "private": true,
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "postinstall": "./node_modules/.bin/grunt"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
-  "license": "BSD-2-Clause",
+  "license": "ISC",
   "dependencies": {
     "grunt": "~0.4.1",
     "grunt-sass": "~0.8.0",
-    "express": "~3.4.4",
-    "ejs": "~0.8.4"
+    "express": "~3.4.8",
+    "jade": "~1.1.5"
   },
   "devDependencies": {
-    "grunt-contrib-watch": "~0.5.3",
-    "grunt-cli": "~0.1.11"
+    "grunt": "~0.4.2",
+    "grunt-sass": "~0.8.1",
+    "grunt-contrib-watch": "~0.5.3"
   }
 }
