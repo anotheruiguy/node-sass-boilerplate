@@ -85,7 +85,7 @@ app.use(express.static('public'));
 
 On your new `index.jade` file, add the following: 
 
-	!!! 5
+	doctype html
 	html
 	  head
 	    meta(charset='utf-8')
@@ -124,6 +124,14 @@ Open `app.js` and crate root route that points to that template file
 
 #### Add Sass to the project
 * `mkdir sass` - create Sass directory in the root of the project
+* Add a new `application.scss` file to the `/sass` directory and add something simple so that we know that Sass is running when it comes time
+
+		$background-color: orange;
+		
+		body {
+		  background-color: $background-color;
+		}
+
 
 
 #### Create Gruntfile
@@ -153,13 +161,17 @@ Add the `livereload: true` option so that LiveReload will work on your project
 
 	watch: {
       source: {
-        files: ['sass/**/*.scss'],
+        files: ['sass/**/*.scss', 'views/**/*.jade'],
         tasks: ['sass'],
         options: {
           livereload: true, // needed to run LiveReload
         }
       }
     }
+    
+Also be sure to register the Grunt Watch npm task. 
+
+	grunt.loadNpmTasks('grunt-contrib-watch');
 
 
 #### Our desired file structure
@@ -169,6 +181,7 @@ Add the `livereload: true` option so that LiveReload will work on your project
 	|--- stylesheets/
 	|- sass/
 	|- views/
+	
 
 
 ## Get things running
@@ -179,7 +192,19 @@ Now that you have a bare bones project set up, we need to get things running. Ty
 * run Node server `$ node app.js`
 * run grunt server `$ grunt watch`
 
-Now you should be able to navigate to `http://localhost:3000/` and see your project running. Run `PORT=4000 node app.js` to listen on a different port.
+Now you should be able to navigate to `http://localhost:4000/` and see your project running. Run `PORT=9999 node app.js` to listen on any other port.
+
+### Grunt and Grunt watch with Sass
+
+It should be noted that when you run `grunt watch` on this project for the first time, the Sass will not be processed into CSS. Since we are using a watcher, it is waiting for the `application.scss` file to be saved before processing it to CSS. 
+
+By simply running `grunt` on this project, or any new project where the Sass has yet to be processed, this will do a one time Grunt Task and process the Sass to CSS. 
+
+### livereload: true
+
+If you have never worked with LiveReload, this is a tool you will no longer be able to live without. At this point your new project will be configured in such a way that, while running `grunt watch` you should be able to edit your Sass and Jade files and watch the update happen in the browser without having to hit the refresh button. 
+
+Go ahead, try it. 
 
 
 ## Install a Sass framework
