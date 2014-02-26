@@ -73,24 +73,44 @@ app.use(express.static('public'));
 ```
 
 
-#### Adding routes, make a home page
+#### Make a home page
 * **NOTE**: ALL routes need to come **BEFORE** `app.listen(port);`
 * update `app.js` to reflect template being used per the route
 * `$ cd views` where all view templates will live
 * `$ touch views/index.jade` - create base index file
 
+On your new `index.jade` file, add the following: 
+
+		!!! 5
+		html
+		  head
+		    meta(charset='utf-8')
+		    meta(http-equiv='X-UA-Compatible', content='IE=edge')
+		    title
+		    meta(name='description', content='')
+		    meta(name='viewport', content='width=device-width, initial-scale=1')
+		    link(rel='stylesheet', href='stylesheets/application.css')
+		  body
+		    h1 This is a heading 1
+		    h2 This is a heading 2
+		    p Hello world! This is HTML5 Boilerplate.
+		    
+		    script(src='//localhost:35729/livereload.js') //- to use Livereload
+
+
+#### Add Livereload
+Just before the `</body>` in your template file, be sure to add in the script for LiveReload
+
+	script(src='//localhost:35729/livereload.js')
+
+
+#### Add routes
 Open `app.js` and crate root route that points to that template file
 
 	// set routes
 	app.get('/', function(req, res) {
 	  res.render('index');
 	});
-
-
-Just before the `</body>` in your template file, be sure to add in the script for LiveReload
-
-	<script src="//localhost:35729/livereload.js"></scrip>
-
 
 #### Install Grunt-Sass
 * `npm install --save-dev grunt-sass` - install grunt-sass
