@@ -38,7 +38,7 @@ If you only want to add to this project:
 * `$ mkdir public/stylesheets` - create stylesheets directory within the public directory
 
 
-#### Get the app started
+#### Get the app started and create a server
 * `$ touch app.js` - create the core application `.js` file
 * add the following
 
@@ -53,19 +53,23 @@ If you only want to add to this project:
 
 
 #### Install template language
-* `$ npm install --save ejs` - to install ejs  -- or --
 * `$ npm install --save jade` - to install jade
 * `$ mkdir views` - create views directory for template views
 
+Alternativelly, if you are not wanting to use the Jade templating language, you can do the following:
 
-#### Update the app.js file
+	$ npm install --save ejs
 
-Add the following above setting the server port
+
+
+#### Update the app.js file to use the templating engine
+
+Add the following above setting the server port `app.listen(4000);`:
 
 ```
 // views as directory for all template files
 app.set('views', path.join(__dirname, 'views'));
-// use either jade or ejs
+// use either 'jade' or 'ejs'
 app.set('view engine', 'jade'); 
 
 // instruct express to server up static assets
@@ -86,9 +90,11 @@ On your new `index.jade` file, add the following:
 	  head
 	    meta(charset='utf-8')
 	    meta(http-equiv='X-UA-Compatible', content='IE=edge')
-	    title
-	    meta(name='description', content='')
-	    meta(name='viewport', content='width=device-width, initial-scale=1')
+	    title This is a project title
+	    meta(name='description', content='My new project description')
+	    meta(name='viewport', content='width=device-width, initial-scale=1.0, minimum-scale=0.5 maximum-scale=1.0')
+	    meta(name='apple-mobile-web-app-capable', content='yes')
+	    meta(name='apple-mobile-web-app-status-bar-style', content='black-translucent')
 	    link(rel='stylesheet', href='stylesheets/application.css')
 	  body
 	    h1 This is a heading 1
