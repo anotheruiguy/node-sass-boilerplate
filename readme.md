@@ -194,7 +194,7 @@ Now that you have a bare bones project set up, we need to get things running. Ty
 
 Now you should be able to navigate to `http://localhost:4000/` and see your project running. Run `PORT=9999 node app.js` to listen on any other port.
 
-### Grunt and Grunt watch with Sass
+### Grunt and Grunt Watch with Sass
 
 It should be noted that when you run `grunt watch` on this project for the first time, the Sass will not be processed into CSS. Since we are using a watcher, it is waiting for the `application.scss` file to be saved before processing it to CSS. 
 
@@ -209,26 +209,66 @@ Go ahead, try it.
 
 ## Install a Sass framework
 
-For this project I choose to use Thoughtbot's [Bourbon](http://bourbon.io/) library.
+For this project I choose to use Thoughtbot's [Bourbon](http://bourbon.io/) library. The current version of Bourbon has a dependency on Ruby to install it's Gem and then init the Bourbon library from the Gem. For the scope of this project I don't want to introduce a Ruby dependency if I don't have to. 
 
-While this library is a Ruby Gem, this does not place a Ruby dependency on your project. The Gem installs a version of the Sass mixin library directly into your project.
+### Use BOURBON for BOWER
 
-Before installing the library, update your file structure to contain a `lib/` directory within your `sass/` directory.
+This is a fork of the official Bourbon repo, but is more ideal for using Bower to install. Since we are going to use this library as a dependency, we need to set up a `bower.json` manifest file. Just a couple simple steps:
 
-	|- node_modules/
-	|- public/
-	|--- stylesheets/
-	|- sass/
-	|--- lib/
-	|- views/
+At the root of the project, run:
 
+	$ touch bower.json
+	
+Open this new file and add the following:
 
-### Let's install Bourbon.
+	{
+	  "name": "<project name>"
+	}
+	
+That's it. The value for `"name":` can be what ever your project's name is. 
 
-* `$ gem install bourbon` or `sudo gem install bourbon` (if you are not running RVM)
-* `$ cd sass/lib` change directories to the new Sass lib directory
-* `$ bourbon install` to install the library
-* Open the `style.scss` file and add `@import "lib/bourbon/bourbon";`
+To install Bourbon from the Bower repo, run:
+
+	$ bower install bower-bourbon --save
+	
+This will install the Bourbon library into a newly created `bower_components` dir in your project. Using the `--save` flag will add this to the `bower.json` manifest as a dependency. 
+
+### Gruntfile updates
+
+To make use of the Bourbon library, we have two choices. One is to create a relative path from the `application.scss` file to the library within the `bower_components/` dir, or we can pre-configure a load path. I am going to go with load path. 
+
+In the Grunt-Sass API there is a function for `includePaths` that accepts an array. To make use of this, we need to update the `gruntfile.js` using this function like so:
+
+	sass: {
+      dist: {
+        files: {
+          'public/stylesheets/application.css': 'sass/application.scss'
+        },
+        options: {
+          includePaths: [
+            './bower_components/bower-bourbon'
+          ]
+        }
+      }
+    }
+    
+Note done yet. Next we need to import this library into our `application.scss` file:
+
+	@import "bourbon";
+	
+To test this, open the `application.scss` file and add a simple mixin from Bourbon:
+
+	body {
+	  @include backface-visibility(visible);
+	}
+	
+When you save they file, two things should happen. In the terminal you want to see `Done, without errors.` and then if you open the `application.css` file in the `public` dir, you want to see this:
+
+	body {
+	  -webkit-backface-visibility: visible;
+	  backface-visibility: visible; }
+	  
+If you don't see these success factors, then review your implementation against the files in this repo and make sure that everything is correct.
 
 
 ### Install UI foundational framework
