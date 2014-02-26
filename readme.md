@@ -8,7 +8,12 @@ Hope this is of help!
 
 #### Create your Node.js project
 * `$ npm init` - create a clean node project
-* **NOTE**: be sure to add `"private": true,` to the `package.json` so that your project is not globally distributed as a npm app
+* **NOTE**: update the `package.json` file to to add `"private": true,` so that your project is not globally distributed as a npm app. Example: 
+
+		"version": "0.1.0",
+		"private": true,
+		"description": "This is a new boilerplate project",
+
 
 #### Install Express
 * `$ npm install --save express` - install the Express package and save to your `package.json` file
@@ -51,18 +56,21 @@ If you only want to add to this project:
 * `$ npm install --save ejs` - to install ejs  -- or --
 * `$ npm install --save jade` - to install jade
 * `$ mkdir views` - create views directory for template views
-* `$ touch views/something.ejs` - create any view file   -- or --
-* `$ touch views/something.jade` - create any view file
 
 
 #### Update the app.js file
 
 Add the following above setting the server port
 
-	// views as directory for all template files
-	app.set('views', path.join(__dirname, 'views'));
-	app.set('view engine', 'jade'); // use either jade or ejs		// instruct express to server up static assets
-	app.use(express.static('public'));
+```
+// views as directory for all template files
+app.set('views', path.join(__dirname, 'views'));
+// use either jade or ejs
+app.set('view engine', 'jade'); 
+
+// instruct express to server up static assets
+app.use(express.static('public'));
+```
 
 
 #### Adding routes, make a home page

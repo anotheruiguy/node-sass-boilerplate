@@ -1,9 +1,9 @@
 {
   "name": "Node-Sass",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "private": true,
-  "description": "",
-  "main": "index.js",
+  "description": "This is a new boilerplate project",
+  "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "postinstall": "./node_modules/.bin/grunt"
