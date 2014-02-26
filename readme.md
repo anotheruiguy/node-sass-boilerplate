@@ -130,15 +130,16 @@ Open `app.js` and crate root route that points to that template file
 `$ touch gruntfile.js` - create a new Gruntfile in the root of your project, add the following code to the empty file
 
 	module.exports = function(grunt) {
-	  grunt.initConfig ({
+	  grunt.initConfig({
 	    sass: {
 	      dist: {
 	        files: {
-	          'public/stylesheets/style.css' : 'sass/style.scss'
+	          'public/stylesheets/application.css': 'sass/application.scss'
 	        }
 	      }
 	    }
-
+	  });
+	
 	  grunt.loadNpmTasks('grunt-sass');
 	  grunt.registerTask('default', ['sass']);
 	};
@@ -146,7 +147,7 @@ Open `app.js` and crate root route that points to that template file
 
 #### Install Grunt Watch
 * `npm install grunt-contrib-watch --save-dev` - install Grunt watcher and save as a Dev resource
-* Add the following to `gruntfile.js` within the `grunt.initConfig` function
+* Add the following to `gruntfile.js` within the `grunt.initConfig` function, just after the `sass: { ... }` portion. 
 
 Add the `livereload: true` option so that LiveReload will work on your project
 
