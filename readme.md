@@ -81,21 +81,21 @@ app.use(express.static('public'));
 
 On your new `index.jade` file, add the following: 
 
-		!!! 5
-		html
-		  head
-		    meta(charset='utf-8')
-		    meta(http-equiv='X-UA-Compatible', content='IE=edge')
-		    title
-		    meta(name='description', content='')
-		    meta(name='viewport', content='width=device-width, initial-scale=1')
-		    link(rel='stylesheet', href='stylesheets/application.css')
-		  body
-		    h1 This is a heading 1
-		    h2 This is a heading 2
-		    p Hello world! This is HTML5 Boilerplate.
-		    
-		    script(src='//localhost:35729/livereload.js') //- to use Livereload
+	!!! 5
+	html
+	  head
+	    meta(charset='utf-8')
+	    meta(http-equiv='X-UA-Compatible', content='IE=edge')
+	    title
+	    meta(name='description', content='')
+	    meta(name='viewport', content='width=device-width, initial-scale=1')
+	    link(rel='stylesheet', href='stylesheets/application.css')
+	  body
+	    h1 This is a heading 1
+	    h2 This is a heading 2
+	    p Hello world! This is HTML5 Boilerplate.
+	    
+	    script(src='//localhost:35729/livereload.js') //- to use Livereload
 
 
 #### Add Livereload
