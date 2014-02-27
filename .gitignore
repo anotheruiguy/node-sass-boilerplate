@@ -1,8 +1,9 @@
 # Generated CSS output
 public/stylesheets/*.css
 
-# No node packages
+# No packages
 node_modules/
+bower_components
 
 # OS generated files #
 .DS_Store

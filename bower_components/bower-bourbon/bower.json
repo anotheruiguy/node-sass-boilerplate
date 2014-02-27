@@ -1,7 +1,0 @@
-{
-  "name": "bower-bourbon",
-  "version": "3.1.8",
-  "main": "./_bourbon.scss",
-  "dependencies": {
-  }
-}
