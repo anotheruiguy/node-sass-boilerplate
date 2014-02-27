@@ -6,7 +6,7 @@
 // Import core Sass libraries
 // ---------------------------------------------------------
 @import "bourbon";
-@import "lib/manifest";
+@import "lib/typography/manifest";
 
 
 // Standard CSS reset stuff here
@@ -27,3 +27,9 @@
 
 // Layouts
 @import "layouts/manifest";
+
+
+.block {
+  color: $alpha_color;
+  color: $alpha_scale_fox;
+}
