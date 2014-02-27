@@ -301,7 +301,7 @@ In our `application.scss` file, we need to import a few files to get this starte
 
 	// Import core Sass libraries
 	// ---------------------------------------------------------
-	@import "lib/bourbon/bourbon";
+	@import "bourbon";
 
 
 	// Standard CSS reset stuff here
