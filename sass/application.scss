@@ -1,35 +1,33 @@
-// App Config - this is where most of your magic will happen
-// ---------------------------------------------------------
+/////// Import packages
+// *-------------------------------------------------------------------------------
+@import "bourbon";
+
+
+/////// App Config - this is where most of your magic will happen
+// *---------------------------------------------------------
 @import "config";
 
 
-// Import core Sass libraries
-// ---------------------------------------------------------
-@import "bourbon";
+/////// Import core Sass libraries
+// *---------------------------------------------------------
 @import "lib/typography/manifest";
 
 
-// Standard CSS reset stuff here
-// ---------------------------------------------------------
+/////// Standard CSS reset stuff here
+// *---------------------------------------------------------
 @import "reset";
 
-// Base
+/////// Base
 @import "typography";
 @import "forms";
 @import "buttons";
 
-// UI Patterns and Modules
+/////// UI Patterns and Modules
 @import "ui_patterns/manifest";
 @import "modules/manifest";
 
-// Vendor specific styles
+/////// Vendor specific styles
 @import "vendors/manifest";
 
-// Layouts
+/////// Layouts
 @import "layouts/manifest";
-
-
-.block {
-  color: $alpha_color;
-  color: $alpha_scale_fox;
-}
