@@ -1,19 +1,19 @@
-$default_heading_size: $heading_1 !default;
-$default_heading_family: $heading_font_family !default;
-$default_heading_color: $primary_header_color !default;
-$default_heading_weight: normal !default;
+$default-heading-size: $heading-1 !default;
+$default-heading-family: $heading-font-family !default;
+$default-heading-color: $primary-header-color !default;
+$default-heading-weight: normal !default;
 
 //////// heading text mixin //////////
 // ------------------------------------------------
-// default values are being set in /stipe/stylesheets/stipe/_typography.scss
-@mixin heading ($heading_size: $default_heading_size,
-$heading_family: $default_heading_family,
-$heading_color: $default_heading_color,
-$heading_weight: $default_heading_weight) {
-  font-size: em($heading_size);
-  line-height: baseline($heading_size);
-  margin-bottom: baseline-margin($heading_size);
-  color: $heading_color;
-  font-weight: $heading_weight;
-  font-family: $heading_family;
+// default values are being set in /stipe/stylesheets/stipe/-typography.scss
+@mixin heading ($heading-size: $default-heading-size,
+$heading-family: $default-heading-family,
+$heading-color: $default-heading-color,
+$heading-weight: $default-heading-weight) {
+  font-size: em($heading-size);
+  line-height: baseline($heading-size);
+  margin-bottom: baseline-margin($heading-size);
+  color: $heading-color;
+  font-weight: $heading-weight;
+  font-family: $heading-family;
 }

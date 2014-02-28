@@ -158,28 +158,28 @@ a.button {
 // *-------------------------------------------------------------------------------
 
 a:link {
-  -webkit-tap-highlight-color: $webkit_tap_hightlight;
+  -webkit-tap-highlight-color: $webkit-tap-hightlight;
 }
 
 ins {
-  background-color: $ins_color;
+  background-color: $ins-color;
   color: black;
   text-decoration: none;
 }
 
 mark {
-  background-color: $mark_color;
-  color: $primary_text;
+  background-color: $mark-color;
+  color: $primary-text;
   font-style: italic;
   font-weight: bold;
 }
 
 ::selection {
-  background: $selection_color;
-  color: $selection_text_color;
+  background: $selection-color;
+  color: $selection-text-color;
 }
 
 ::-moz-selection {
-  background: $selection_color;
-  color: $selection_text_color;
+  background: $selection-color;
+  color: $selection-text-color;
 }

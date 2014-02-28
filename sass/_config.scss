@@ -13,22 +13,22 @@
 
 /////// Typography configuration
 // *-------------------------------------------------------------------------------
-$font_size: 12;
+$font-size: 12;
 
-$heading_1: 46;
-$heading_2: 32;
-$heading_3: 28;
-$heading_4: 18;
-$heading_5: 18;
-$heading_6: 18;
+$heading-1: 46;
+$heading-2: 32;
+$heading-3: 28;
+$heading-4: 18;
+$heading-5: 18;
+$heading-6: 18;
 
-$line: $font_size * 1.5;
-$small_point_size: 10;
-$large_point_size: 14;
+$line: $font-size * 1.5;
+$small-point-size: 10;
+$large-point-size: 14;
 
-$primary_font_family: #{"Helvetica Neue", Arial, sans-serif};
-$secondary_font_family: #{"Helvetica Neue", Arial, sans-serif};
-$heading_font_family: #{"Helvetica Neue", Arial, sans-serif};
+$primary-font-family: #{"Helvetica Neue", Arial, sans-serif};
+$secondary-font-family: #{"Helvetica Neue", Arial, sans-serif};
+$heading-font-family: #{"Helvetica Neue", Arial, sans-serif};
 
 
 /////// Default webfont directory
@@ -41,17 +41,17 @@ $imgDir: "images/";
 
 /////// OOCSS generic base colors
 // *-------------------------------------------------------------------------------
-$alpha_primary:   #5a2e2e;        // red
-$bravo_primary:   #3e4147;        // green
-$charlie_primary: #fffedf;        // yellow
-$delta_primary:   #2a2c31;        // blue
-$echo_primary:    #dfba69;        // accent
+$alpha-primary:   #5a2e2e;        // red
+$bravo-primary:   #3e4147;        // green
+$charlie-primary: #fffedf;        // yellow
+$delta-primary:   #2a2c31;        // blue
+$echo-primary:    #dfba69;        // accent
 
-$alpha_gray:      #333;           //black
+$alpha-gray:      #333;           //black
 
 /////// Color math
 // *-------------------------------------------------------------------------------
-@import "lib/colors/manifest";
+@import "color-scale";
 
 
 /////// Semantic variables
@@ -60,22 +60,22 @@ $alpha_gray:      #333;           //black
 $white:                                #fff;
 
 // primary header font color
-$primary_header_color:                 $alpha_gray;
+$primary-header-color:                 $alpha-gray;
 
 // default heading font weight
-$heading_font_weight:                  normal;
+$heading-font-weight:                  normal;
 
 // primary font color for the app
-$primary_text:                         $alpha_gray;
+$primary-text:                         $alpha-gray;
 
 // default `href` link color
-$href_color:                           $delta_color;
+$href-color:                           $delta-color;
 
 // default shadow colors
-$shadow_color:                         fade-out($alpha_color, 0.5);
+$shadow-color:                         fade-out($alpha-color, 0.5);
 
 // default border color
-$border_color:                         $alpha_color;
+$border-color:                         $alpha-color;
 
 
 
@@ -83,26 +83,26 @@ $border_color:                         $alpha_color;
 // *-------------------------------------------------------------------------------
 // used with the `ins` tag
 // http://www.w3schools.com/tags/tag_ins.asp
-$ins_color:                            $charlie_color;
+$ins-color:                            $charlie-color;
 
 // used with the `mark` tag
-// http://www.w3schools.com/html5/tag_mark.asp
-$mark_color:                           $charlie_color;
+// http://www.w3schools.com/html5/tag-mark.asp
+$mark-color:                           $charlie-color;
 
 // webkit tap highlight color
-$webkit_tap_hightlight:                $delta_color;
+$webkit-tap-hightlight:                $delta-color;
 
 // overrides the default content selection color in the browser
-$selection_color:                      $charlie_color;
-$selection_text_color:                 $primary_text;
+$selection-color:                      $charlie-color;
+$selection-text-color:                 $primary-text;
 
 
 /////// @media breakpoint defaults
 // *-------------------------------------------------------------------------------
 $tablet:                    "screen and (max-width: 64em)";
-$tablet_portrait:           "screen and (max-width: 50em) and (orientation: portrait)";
-$tablet_landscape:          "screen and (max-width: 50em) and (orientation: landscape)";
+$tablet-portrait:           "screen and (max-width: 50em) and (orientation: portrait)";
+$tablet-landscape:          "screen and (max-width: 50em) and (orientation: landscape)";
 
 $mobile:                    "screen and (max-width: 30em)";
-$mobile_portrait:           "screen and (max-width: 30em) and (orientation : portrait)";
-$mobile_landscape:          "screen and (max-width: 30em) and (orientation : landscape)";
+$mobile-portrait:           "screen and (max-width: 30em) and (orientation : portrait)";
+$mobile-landscape:          "screen and (max-width: 30em) and (orientation : landscape)";

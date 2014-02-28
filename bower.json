@@ -1,6 +1,7 @@
 {
   "name": "node-sass",
   "dependencies": {
-    "bower-bourbon": "~3.1.8"
+    "bower-bourbon": "~3.1.8",
+    "color-scale": "*"
   }
 }
