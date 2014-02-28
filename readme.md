@@ -256,6 +256,8 @@ Note done yet. Next we need to import this library into our `application.scss` f
 
 	@import "bourbon";
 	
+Remember, when adding new bower packages to your project, to update this file and add a new path to the array. 
+
 To test this, open the `application.scss` file and add a simple mixin from Bourbon:
 
 	body {
@@ -269,6 +271,41 @@ When you save they file, two things should happen. In the terminal you want to s
 	  backface-visibility: visible; }
 	  
 If you don't see these success factors, then review your implementation against the files in this repo and make sure that everything is correct.
+
+### .gitignore
+
+At some point you will want to enter this project into version control and I would assume that you are using Git. 
+
+By now at this point in the project you should see `node_modules/` and `bower_components/`. There are opinions on this, but my opinion is that you do not want to commit these directories to your version control. These are dependencies and we are using npm and bower to install these dependencies when needed. So, do the following:
+
+	$ touch .gitignore
+	
+Once the file is created, open it and the first thing we want to add is a good base for OS generated files
+
+	# OS generated files
+	####################
+	.DS_Store
+	.DS_Store?
+	._*
+	.Spotlight-V100
+	.Trashes
+	ehthumbs.db
+	Thumbs.db
+	
+Since we are using Sass, we only want our Sass files included in the Git repo, so add the following:
+
+	# Generated CSS output
+	#######################
+	public/stylesheets/*.css
+	
+Last, our dependencies, add:
+
+	# Package dependencies
+	######################
+	node_modules/
+	bower_components
+
+Now when you `git init` your project, these files and directories will not be added to the repo.
 
 
 ### Install UI foundational framework

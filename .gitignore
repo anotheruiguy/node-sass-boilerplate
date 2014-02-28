@@ -1,11 +1,5 @@
-# Generated CSS output
-public/stylesheets/*.css
-
-# No packages
-node_modules/
-bower_components
-
-# OS generated files #
+# OS generated files
+####################
 .DS_Store
 .DS_Store?
 ._*
@@ -13,3 +7,12 @@ bower_components
 .Trashes
 ehthumbs.db
 Thumbs.db
+
+# Generated CSS output
+#######################
+public/stylesheets/*.css
+
+# Package dependencies
+######################
+node_modules/
+bower_components
