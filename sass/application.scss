@@ -1,16 +1,12 @@
 /////// Import packages
 // *-------------------------------------------------------------------------------
 @import "bourbon";
+@import "type-rhythm-scale";
 
 
 /////// App Config - this is where most of your magic will happen
 // *---------------------------------------------------------
 @import "config";
-
-
-/////// Import core Sass libraries
-// *---------------------------------------------------------
-@import "lib/typography/manifest";
 
 
 /////// Standard CSS reset stuff here
