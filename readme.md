@@ -46,10 +46,14 @@ If you only want to add to this project:
 		var express = require('express');
 		var app = express();
 		var path = require('path');
+		var port = 4000;
+		
+		// Displays server log in the CLI
+		app.use(express.logger());
 
 		// Set server port
-		app.listen(4000);
-		console.log('server is running');
+		app.listen(port);
+		console.log("Server is running at => http://localhost:" + port + "/\nCTRL + C to shutdown");
 
 
 #### Install template language

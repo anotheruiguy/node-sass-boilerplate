@@ -2,6 +2,10 @@
 var express = require('express');
 var app = express();
 var path = require('path');
+var port = 4000;
+
+// Displays server log in the CLI
+app.use(express.logger());
 
 // views as directory for all template files
 app.set('views', path.join(__dirname, 'views'));
@@ -18,5 +22,5 @@ app.get('/', function(req, res) {
 });
 
 // Set server port
-app.listen(4000);
-console.log('server is running');
+app.listen(port);
+console.log("Server is running at => http://localhost:" + port + "/\nCTRL + C to shutdown");
