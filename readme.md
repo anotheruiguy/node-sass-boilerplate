@@ -68,7 +68,7 @@ Alternativelly, if you are not wanting to use the Jade templating language, you 
 
 #### Update the app.js file to use the templating engine
 
-Add the following above setting the server port `app.listen(4000);`:
+Add the following above setting the server port `app.listen(port);`:
 
 ```
 // views as directory for all template files
