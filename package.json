@@ -16,11 +16,16 @@
   "license": "ISC",
   "dependencies": {
     "express": "~3.4.8",
-    "jade": "~1.2.0"
+    "jade": "~1.2.0",
+    "grunt": "~0.4.2",
+    "grunt-sass": "~0.11.0"
   },
   "devDependencies": {
-    "grunt": "~0.4.2",
-    "grunt-sass": "~0.11.0",
-    "grunt-contrib-watch": "~0.5.3"
+    "grunt-contrib-watch": "~0.5.3",
+    "grunt-cli": "~0.1.13"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "postinstall": "./node_modules/.bin/grunt"
   }
 }

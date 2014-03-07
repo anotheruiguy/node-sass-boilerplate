@@ -20,7 +20,7 @@ Hope this is of help!
 
 
 #### Install Grunt
-* `$ npm install --save-dev grunt` - install the Grunt package and save to your `package.json` file
+* `$ npm install --save grunt` - install the Grunt package and save to your `package.json` file
 
 ##### Grunt dependencies
 
@@ -123,7 +123,7 @@ Open `app.js` and crate root route that points to that template file
 	});
 
 #### Install Grunt-Sass
-* `npm install --save-dev grunt-sass` - install grunt-sass
+* `npm install --save grunt-sass` - install grunt-sass
 
 
 #### Add Sass to the project
@@ -378,32 +378,22 @@ The Heroku Dev Center has a great article on ["Getting Started with Node.js on H
 The tl;dr version (assuming you already have the Heroku Toolbelt):
 
 1. Add a `Procfile` to declare the process type. Our `Procfile` should contain a single line: `web: node app.js`
-2. Create a new Heroku app and add it as a Git remote: `heroku create`
+2. Create a new Heroku app and add it as a Git remote: `heroku create <project name>`
 3. Deploy: `git push heroku master`
 4. Visit your new app: `heroku open`
 
 ### Compiling your Sass on deploy
 
-Checking compiled CSS into version control isn't the most evil thing a developer could do, but it's close. So how do you compile your Sass into CSS *and* deploy it?
+When using pre-processors, you typically never want to commit your processed files to the version control. Reason being, this will introduce a host of conflict issues. So how do you compile your Sass into CSS *and* deploy it?
 
 1. Include `grunt-cli` in your `package.json`: `npm install --save-dev grunt-cli`
-2. Add a [`postinstall`](https://npmjs.org/doc/scripts.html) "scripts" step to `package.json`. It should look something like this:
+* Add a [`postinstall`](https://npmjs.org/doc/scripts.html) "scripts" step to `package.json`. It should look something like this:
 
         "scripts": {
           "test": "echo \"Error: no test specified\" && exit 1",
           "postinstall": "./node_modules/.bin/grunt"
         },
 
-3. Previously, we installed Grunt and Grunt-Sass in the `devDependencies` group in `package.json`, which won't work because Heroku runs `npm install --production` during deployment. The `--production` flag skips the `devDependencies` group. So we need to move grunt and Grunt-Sass to the `dependencies` group instead:
+* Previously, we installed Grunt and Grunt-Sass as a project dependency so that when Heroku runs `npm install --production` during deployment we will get the necessary resources. The `--production` flag skips the `devDependencies` group.
 
-        "dependencies": {
-          "grunt": "~0.4.1",
-          "grunt-sass": "~0.8.0",
-          ...
-        },
-        "devDependencies": {
-          "grunt-contrib-watch": "~0.5.3",
-          "grunt-cli": "~0.1.11"
-        }
-
-4. Now, when you `git push heroku` Heroku will compile your Sass.
+* Now, when you `git push heroku` Heroku will compile your Sass.
