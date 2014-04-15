@@ -1,0 +1,18 @@
+$font-size: 12 !default;
+
+/////// text arguments w/baseline rhythm //////////
+// -----------------------------------------------------
+@mixin text ($baseline_size: $font-size, $margin: auto) {
+  font-size: em($baseline_size);
+  line-height: baseline($baseline_size);
+
+  @if $margin == auto {
+    margin-bottom: baseline-margin($baseline_size);
+  }
+  @else if $margin == 0 {
+    // no op
+  }
+  @else {
+    margin-bottom: em($margin);
+  }
+}

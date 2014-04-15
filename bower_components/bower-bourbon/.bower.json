@@ -1,0 +1,16 @@
+{
+  "name": "bower-bourbon",
+  "version": "3.1.8",
+  "main": "./_bourbon.scss",
+  "dependencies": {},
+  "homepage": "https://github.com/hmps/bourbon",
+  "_release": "3.1.8",
+  "_resolution": {
+    "type": "version",
+    "tag": "3.1.8",
+    "commit": "12ba22379616af069e605fd8094ca914400297d4"
+  },
+  "_source": "git://github.com/hmps/bourbon.git",
+  "_target": "~3.1.8",
+  "_originalSource": "bower-bourbon"
+}

@@ -1,0 +1,201 @@
+/////// Dependent functions
+// These functions are ...
+  // required if you are using libsass
+  // required if you are not using Bourbon
+  // not required if you are using Ruby Sass
+// *-------------------------------------------------------------------------------
+// Add percentage of white to a color
+@function tint($color, $percent){
+  @return mix(white, $color, $percent);
+}
+
+// Add percentage of black to a color
+@function shade($color, $percent){
+  @return mix(black, $color, $percent);
+}
+
+/////// Core Colors
+// *-------------------------------------------------------------------------------
+$alpha-primary:   #F11524 !default;        // red
+$bravo-primary:   #1E8042 !default;        // green
+$charlie-primary: #F7E257 !default;        // yellow
+$delta-primary:   #3769C7 !default;        // blue
+$echo-primary:    #FB832C !default;        // accent
+$alpha-gray:      #333333 !default;        // black
+
+
+/////// Sass creates color scale
+// *-------------------------------------------------------------------------------
+$alpha-color:$alpha-primary !default;
+$alpha-scale-bravo:scale-color($alpha-color,$lightness:10%) !default;
+$alpha-scale-charlie:scale-color($alpha-color,$lightness:20%) !default;
+$alpha-scale-delta:scale-color($alpha-color,$lightness:30%) !default;
+$alpha-scale-echo:scale-color($alpha-color,$lightness:40%) !default;
+$alpha-scale-fox:scale-color($alpha-color,$lightness:50%) !default;
+$alpha-scale-golf:scale-color($alpha-color,$lightness:60%) !default;
+$alpha-scale-hotel:scale-color($alpha-color,$lightness:70%) !default;
+$alpha-scale-india:scale-color($alpha-color,$lightness:80%) !default;
+$alpha-scale-juliet:scale-color($alpha-color,$lightness:90%) !default;
+
+$alpha-tint-bravo:tint($alpha-color, 10%) !default;
+$alpha-tint-charlie:tint($alpha-color, 20%) !default;
+$alpha-tint-delta:tint($alpha-color, 30%) !default;
+$alpha-tint-echo:tint($alpha-color, 40%) !default;
+$alpha-tint-fox:tint($alpha-color, 50%) !default;
+$alpha-tint-golf:tint($alpha-color, 60%) !default;
+$alpha-tint-hotel:tint($alpha-color, 70%) !default;
+$alpha-tint-india:tint($alpha-color, 80%) !default;
+$alpha-tint-juliet:tint($alpha-color, 90%) !default;
+
+$alpha-shade-bravo:shade($alpha-color, 10%) !default;
+$alpha-shade-charlie:shade($alpha-color, 20%) !default;
+$alpha-shade-delta:shade($alpha-color, 30%) !default;
+$alpha-shade-echo:shade($alpha-color, 40%) !default;
+$alpha-shade-fox:shade($alpha-color, 50%) !default;
+$alpha-shade-golf:shade($alpha-color, 60%) !default;
+$alpha-shade-hotel:shade($alpha-color, 70%) !default;
+$alpha-shade-india:shade($alpha-color, 80%) !default;
+$alpha-shade-juliet:shade($alpha-color, 90%) !default;
+
+
+
+$bravo-color:$bravo-primary !default;
+$bravo-scale-bravo:scale-color($bravo-color,$lightness:10%) !default;
+$bravo-scale-charlie:scale-color($bravo-color,$lightness:20%) !default;
+$bravo-scale-delta:scale-color($bravo-color,$lightness:30%) !default;
+$bravo-scale-echo:scale-color($bravo-color,$lightness:40%) !default;
+$bravo-scale-fox:scale-color($bravo-color,$lightness:50%) !default;
+$bravo-scale-golf:scale-color($bravo-color,$lightness:60%) !default;
+$bravo-scale-hotel:scale-color($bravo-color,$lightness:70%) !default;
+$bravo-scale-india:scale-color($bravo-color,$lightness:80%) !default;
+$bravo-scale-juliet:scale-color($bravo-color,$lightness:90%) !default;
+
+$bravo-tint-bravo:tint($bravo-color, 10%) !default;
+$bravo-tint-charlie:tint($bravo-color, 20%) !default;
+$bravo-tint-delta:tint($bravo-color, 30%) !default;
+$bravo-tint-echo:tint($bravo-color, 40%) !default;
+$bravo-tint-fox:tint($bravo-color, 50%) !default;
+$bravo-tint-golf:tint($bravo-color, 60%) !default;
+$bravo-tint-hotel:tint($bravo-color, 70%) !default;
+$bravo-tint-india:tint($bravo-color, 80%) !default;
+$bravo-tint-juliet:tint($bravo-color, 90%) !default;
+
+$bravo-shade-bravo:shade($bravo-color, 10%) !default;
+$bravo-shade-charlie:shade($bravo-color, 20%) !default;
+$bravo-shade-delta:shade($bravo-color, 30%) !default;
+$bravo-shade-echo:shade($bravo-color, 40%) !default;
+$bravo-shade-fox:shade($bravo-color, 50%) !default;
+$bravo-shade-golf:shade($bravo-color, 60%) !default;
+$bravo-shade-hotel:shade($bravo-color, 70%) !default;
+$bravo-shade-india:shade($bravo-color, 80%) !default;
+$bravo-shade-juliet:shade($bravo-color, 90%) !default;
+
+
+
+$charlie-color:$charlie-primary !default;
+$charlie-scale-bravo:scale-color($charlie-color,$lightness:10%) !default;
+$charlie-scale-charlie:scale-color($charlie-color,$lightness:20%) !default;
+$charlie-scale-delta:scale-color($charlie-color,$lightness:30%) !default;
+$charlie-scale-echo:scale-color($charlie-color,$lightness:40%) !default;
+$charlie-scale-fox:scale-color($charlie-color,$lightness:50%) !default;
+$charlie-scale-golf:scale-color($charlie-color,$lightness:60%) !default;
+$charlie-scale-hotel:scale-color($charlie-color,$lightness:70%) !default;
+$charlie-scale-india:scale-color($charlie-color,$lightness:80%) !default;
+$charlie-scale-juliet:scale-color($charlie-color,$lightness:90%) !default;
+
+$charlie-tint-bravo:tint($charlie-color, 10%) !default;
+$charlie-tint-charlie:tint($charlie-color, 20%) !default;
+$charlie-tint-delta:tint($charlie-color, 30%) !default;
+$charlie-tint-echo:tint($charlie-color, 40%) !default;
+$charlie-tint-fox:tint($charlie-color, 50%) !default;
+$charlie-tint-golf:tint($charlie-color, 60%) !default;
+$charlie-tint-hotel:tint($charlie-color, 70%) !default;
+$charlie-tint-india:tint($charlie-color, 80%) !default;
+$charlie-tint-juliet:tint($charlie-color, 90%) !default;
+
+$charlie-shade-bravo:shade($charlie-color, 10%) !default;
+$charlie-shade-charlie:shade($charlie-color, 20%) !default;
+$charlie-shade-delta:shade($charlie-color, 30%) !default;
+$charlie-shade-echo:shade($charlie-color, 40%) !default;
+$charlie-shade-fox:shade($charlie-color, 50%) !default;
+$charlie-shade-golf:shade($charlie-color, 60%) !default;
+$charlie-shade-hotel:shade($charlie-color, 70%) !default;
+$charlie-shade-india:shade($charlie-color, 80%) !default;
+$charlie-shade-juliet:shade($charlie-color, 90%) !default;
+
+
+
+$delta-color:$delta-primary !default;
+$delta-scale-bravo:scale-color($delta-color,$lightness:10%) !default;
+$delta-scale-charlie:scale-color($delta-color,$lightness:20%) !default;
+$delta-scale-delta:scale-color($delta-color,$lightness:30%) !default;
+$delta-scale-echo:scale-color($delta-color,$lightness:40%) !default;
+$delta-scale-fox:scale-color($delta-color,$lightness:50%) !default;
+$delta-scale-golf:scale-color($delta-color,$lightness:60%) !default;
+$delta-scale-hotel:scale-color($delta-color,$lightness:70%) !default;
+$delta-scale-india:scale-color($delta-color,$lightness:80%) !default;
+$delta-scale-juliet:scale-color($delta-color,$lightness:90%) !default;
+
+$delta-tint-bravo:tint($delta-color, 10%) !default;
+$delta-tint-charlie:tint($delta-color, 20%) !default;
+$delta-tint-delta:tint($delta-color, 30%) !default;
+$delta-tint-echo:tint($delta-color, 40%) !default;
+$delta-tint-fox:tint($delta-color, 50%) !default;
+$delta-tint-golf:tint($delta-color, 60%) !default;
+$delta-tint-hotel:tint($delta-color, 70%) !default;
+$delta-tint-india:tint($delta-color, 80%) !default;
+$delta-tint-juliet:tint($delta-color, 90%) !default;
+
+$delta-shade-bravo:shade($delta-color, 10%) !default;
+$delta-shade-charlie:shade($delta-color, 20%) !default;
+$delta-shade-delta:shade($delta-color, 30%) !default;
+$delta-shade-echo:shade($delta-color, 40%) !default;
+$delta-shade-fox:shade($delta-color, 50%) !default;
+$delta-shade-golf:shade($delta-color, 60%) !default;
+$delta-shade-hotel:shade($delta-color, 70%) !default;
+$delta-shade-india:shade($delta-color, 80%) !default;
+$delta-shade-juliet:shade($delta-color, 90%) !default;
+
+
+
+$echo-color:$echo-primary !default;
+$echo-scale-bravo:scale-color($echo-color,$lightness:10%) !default;
+$echo-scale-charlie:scale-color($echo-color,$lightness:20%) !default;
+$echo-scale-delta:scale-color($echo-color,$lightness:30%) !default;
+$echo-scale-echo:scale-color($echo-color,$lightness:40%) !default;
+$echo-scale-fox:scale-color($echo-color,$lightness:50%) !default;
+$echo-scale-golf:scale-color($echo-color,$lightness:60%) !default;
+$echo-scale-hotel:scale-color($echo-color,$lightness:70%) !default;
+$echo-scale-india:scale-color($echo-color,$lightness:80%) !default;
+$echo-scale-juliet:scale-color($echo-color,$lightness:90%) !default;
+
+$echo-tint-bravo:tint($echo-color, 10%) !default;
+$echo-tint-charlie:tint($echo-color, 20%) !default;
+$echo-tint-delta:tint($echo-color, 30%) !default;
+$echo-tint-echo:tint($echo-color, 40%) !default;
+$echo-tint-fox:tint($echo-color, 50%) !default;
+$echo-tint-golf:tint($echo-color, 60%) !default;
+$echo-tint-hotel:tint($echo-color, 70%) !default;
+$echo-tint-india:tint($echo-color, 80%) !default;
+$echo-tint-juliet:tint($echo-color, 90%) !default;
+
+$echo-shade-bravo:shade($echo-color, 10%) !default;
+$echo-shade-charlie:shade($echo-color, 20%) !default;
+$echo-shade-delta:shade($echo-color, 30%) !default;
+$echo-shade-echo:shade($echo-color, 40%) !default;
+$echo-shade-fox:shade($echo-color, 50%) !default;
+$echo-shade-golf:shade($echo-color, 60%) !default;
+$echo-shade-hotel:shade($echo-color, 70%) !default;
+$echo-shade-india:shade($echo-color, 80%) !default;
+$echo-shade-juliet:shade($echo-color, 90%) !default;
+
+
+
+$bravo-gray:scale-color($alpha-gray, $lightness: 10%) !default;
+$charlie-gray:scale-color($alpha-gray, $lightness: 20%) !default;
+$delta-gray:scale-color($alpha-gray, $lightness: 30%) !default;
+$echo-gray:scale-color($alpha-gray, $lightness: 40%) !default;
+$fox-gray:scale-color($alpha-gray, $lightness: 50%) !default;
+$golf-gray:scale-color($alpha-gray, $lightness: 60%) !default;
+$hotel-gray:scale-color($alpha-gray, $lightness: 70%) !default;
+$india-gray:scale-color($alpha-gray, $lightness: 80%) !default;
