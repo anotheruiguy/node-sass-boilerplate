@@ -1,0 +1,24 @@
+{
+  "name": "type-rhythm-scale",
+  "authors": [
+    "Dale Sande <dale.sande@gmail.com>"
+  ],
+  "ignore": [
+    ".gitignore",
+    "bower.json",
+    "**/*.md"
+  ],
+  "description": "A commonly used series of typography mixins and functions",
+  "main": "_type-rhythm-scale.scss",
+  "license": "MIT",
+  "homepage": "https://github.com/anotheruiguy/type-rhythm-scale",
+  "_release": "8971cd76a4",
+  "_resolution": {
+    "type": "branch",
+    "branch": "master",
+    "commit": "8971cd76a455025c433bb2ee8c02e20d99558e87"
+  },
+  "_source": "git://github.com/anotheruiguy/type-rhythm-scale.git",
+  "_target": "*",
+  "_originalSource": "type-rhythm-scale"
+}

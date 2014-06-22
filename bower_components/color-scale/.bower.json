@@ -1,0 +1,24 @@
+{
+  "name": "color-scale",
+  "authors": [
+    "Dale Sande <dale.sande@gmail.com>"
+  ],
+  "ignore": [
+    ".gitignore",
+    "bower.json",
+    "**/*.md"
+  ],
+  "description": "A commonly used series of color scales",
+  "main": "_color-scale.scss",
+  "license": "MIT",
+  "homepage": "https://github.com/anotheruiguy/color-scale",
+  "_release": "96d21e235e",
+  "_resolution": {
+    "type": "branch",
+    "branch": "master",
+    "commit": "96d21e235eee22291602670bc6e40ce37063f6e0"
+  },
+  "_source": "git://github.com/anotheruiguy/color-scale.git",
+  "_target": "*",
+  "_originalSource": "color-scale"
+}

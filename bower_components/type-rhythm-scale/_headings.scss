@@ -1,0 +1,19 @@
+$heading-1: 46 !default;
+$heading-font-family: #{"Helvetica Neue", Arial, sans-serif} !default;
+$primary-header-color: #999999 !default;
+$heading-font-weight: normal !default;
+
+//////// heading text mixin //////////
+// ------------------------------------------------
+// default values are being set in /stipe/stylesheets/stipe/-typography.scss
+@mixin heading ($heading-size: $heading-1,
+$heading-family: $heading-font-family,
+$heading-color: $primary-header-color,
+$heading-weight: $heading-font-weight) {
+  font-size: em($heading-size);
+  line-height: baseline($heading-size);
+  margin-bottom: baseline-margin($heading-size);
+  color: $heading-color;
+  font-weight: $heading-weight;
+  font-family: $heading-family;
+}
